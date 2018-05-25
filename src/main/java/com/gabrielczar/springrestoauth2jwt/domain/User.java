@@ -2,6 +2,7 @@ package com.gabrielczar.springrestoauth2jwt.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.gabrielczar.springrestoauth2jwt.handlers.UserListenerHandler;
 import lombok.Data;
 import lombok.ToString;
 
@@ -14,6 +15,7 @@ import static javax.persistence.FetchType.EAGER;
 @Data
 @ToString
 @Entity(name = "users")
+@EntityListeners(UserListenerHandler.class)
 public class User {
 
     @Id

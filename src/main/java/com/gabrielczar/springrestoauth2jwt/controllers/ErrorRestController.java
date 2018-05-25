@@ -12,7 +12,7 @@ public class ErrorRestController implements ErrorController {
 
     @RequestMapping(value = PATH, produces = "application/json")
     public ResponseEntity error() {
-        return ResponseEntity.badRequest().body("{ \"error\": \"The Content doesn't exist or is unauthorized!\"}");
+        return ResponseEntity.badRequest().body("{ \"error\": \"This content doesn't exist or is unauthorized!\"}");
     }
 
     @Override

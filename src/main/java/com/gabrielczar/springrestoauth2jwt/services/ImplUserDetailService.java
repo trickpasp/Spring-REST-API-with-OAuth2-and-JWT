@@ -31,6 +31,11 @@ public class ImplUserDetailService implements UserDetailsService {
         }
 
         LOGGER.info(user.toString());
-        return (UserDetails) user;
+
+        return org.springframework.security.core.userdetails.User
+                .builder().username(user.getUsername())
+                .password(user.getPassword())
+                .authorities(user.getAuthorities())
+                .build();
     }
 }

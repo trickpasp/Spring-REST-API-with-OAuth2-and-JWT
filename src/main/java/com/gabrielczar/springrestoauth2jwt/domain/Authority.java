@@ -1,6 +1,7 @@
 package com.gabrielczar.springrestoauth2jwt.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
+@NoArgsConstructor
 @Entity(name = "authorities")
 public class Authority implements GrantedAuthority {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
