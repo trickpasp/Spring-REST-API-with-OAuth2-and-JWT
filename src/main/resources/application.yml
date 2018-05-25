@@ -16,8 +16,8 @@ security:
   security-realm: Spring Boot REST API OAuth2 JWT Realm
 
   jwt:
-    client-id: 6697a105331c91173a76381ebd249278
-    client-secret: B6813193F1D7EC8BF5B40183CAC2C160A946E43DFAA300C053292
+    client-id: spring-rest-oauth2-jwt
+    client-secret: B6813193F1D7EC8BF5B40
     grant-type: password
     scope-read: read
     scope-write: write
