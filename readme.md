@@ -31,7 +31,9 @@ mvn docker:start
 ### Exemplos de request
 
 - Gerar token de acesso: 
+
 ```http request
+curl client:secret@localhost:8080/oauth/token -d grant_type=password -d username=usr -d password=pwd
 curl 6697a105331c91173a76381ebd249278:B6813193F1D7EC8BF5B40183CAC2C160A946E43DFAA300C053292@localhost:8080/oauth/token -d grant_type=password -d username=gabrielczar -d password=123456
 ```
 
