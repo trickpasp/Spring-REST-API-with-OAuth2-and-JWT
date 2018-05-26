@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
@@ -31,6 +30,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Value("${security.jwt.grant-type}")
     private String grantType;
 
+    @Value("${security.jwt.grant-type-auth-code}")
+    private String grantTypeAuthCode;
+
+    @Value("${security.jwt.grant-type-refresh-token}")
+    private String grantTypeRefreshToken;
+
     @Value("${security.jwt.scope-read}")
     private String scopeRead;
 
@@ -39,6 +44,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Value("${security.jwt.resource-ids}")
     private String resourceIds;
+
+    @Value("${security.jwt.access-token-validity}")
+    private Integer accessTokenValidity;
+
+    @Value("${security.jwt.refresh-token-validity}")
+    private Integer refreshTokenValidity;
 
     @Autowired
     public AuthorizationServerConfiguration(TokenStore tokenStore, JwtAccessTokenConverter accessTokenConverter, AuthenticationManager authenticationManager) {
@@ -53,9 +64,11 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .inMemory()
                 .withClient(clientId)
                 .secret(clientSecret)
-                .authorizedGrantTypes(grantType)
+                .authorizedGrantTypes(grantType, grantTypeAuthCode, grantTypeRefreshToken)
                 .scopes(scopeRead, scopeWrite)
-                .resourceIds(resourceIds);
+                .resourceIds(resourceIds)
+                .refreshTokenValiditySeconds(refreshTokenValidity)
+                .accessTokenValiditySeconds(accessTokenValidity);
     }
 
     @Override

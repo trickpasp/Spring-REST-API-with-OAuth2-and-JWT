@@ -19,6 +19,10 @@ security:
     client-id: spring-rest-oauth2-jwt
     client-secret: B6813193F1D7EC8BF5B40
     grant-type: password
+    grant-type-auth-code: authorization_code
+    grant-type-refresh-token: refresh_token
     scope-read: read
     scope-write: write
     resource-ids: DA2D532D1BEjwtresourceid
+    access-token-validity: 604800 # 7 days
+    refresh-token-validity: 2592000 # 30 days
