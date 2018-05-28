@@ -33,7 +33,8 @@ mvn docker:start
 - Gerar token de acesso: 
 
 ```http request
-curl client:secret@localhost:8080/oauth/token -d grant_type=password -d username=usr -d password=pwd
+curl [CLIENT-ID]:[CLIENT-SECRET]@localhost:8080/oauth/token -d grant_type=password -d username=[USER] -d password=[PASSWORD]
+
 curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token \
     -d grant_type=password -d username=gabrielczar -d password=123456
 ```
@@ -51,7 +52,9 @@ curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token \
 
 - Renovar Token:
 ```http request
-curl -X POST -H 'Authorization: Basic dGVzdGNsaWVudDpzZWNyZXQ=' -d 'refresh_token=fdb8fdbecf1d03ce5e6125c067733c0d51de209c&grant_type=refresh_token' localhost:8080/oauth/token
+curl [CLIENT-ID]:[CLIENT-SECRET]@localhost:8080/oauth/token -d grant_type=refresh_token -d refresh_token=[REFRESH_TOKEN]
+
+curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token -d "grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiREEyRDUzMkQxQkVqd3RyZXNvdXJjZWlkIl0sInVzZXJfbmFtZSI6ImdhYnJpZWxjemFyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6ImY4MTJkYzBlLWZiZmItNDQ1My04ZDI2LTY5NmM2NWQ0MzA5ZiIsImV4cCI6MTUyOTg5NjQ5MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjZlNWMyNDRhLTU5NDQtNDNhMy05ZjJlLTkwMWQ1ZDFkNTJjYiIsImNsaWVudF9pZCI6InNwcmluZy1yZXN0LW9hdXRoMi1qd3QifQ.E3w8BWVdtFyw6eBwBokXIXRtE3-oxdwH0JgLf-13wfo" 
 ```
 
 - Acessar recurso:
