@@ -58,8 +58,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .authorizedGrantTypes(GRANT_TYPE_PASSWORD, GRANT_TYPE_REFRESH, GRANT_TYPE_AUTH_CODE)
                 .scopes(SCOPE_READ, SCOPE_WRITE)
                 .resourceIds(resourceId)
-                .refreshTokenValiditySeconds(refreshTokenValidity)
-                .accessTokenValiditySeconds(accessTokenValidity);
+                .refreshTokenValiditySeconds(accessTokenValidity)
+                .accessTokenValiditySeconds(refreshTokenValidity);
     }
 
     @Override
