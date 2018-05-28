@@ -34,7 +34,8 @@ mvn docker:start
 
 ```http request
 curl client:secret@localhost:8080/oauth/token -d grant_type=password -d username=usr -d password=pwd
-curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token -d grant_type=password -d username=gabrielczar -d password=123456
+curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token \
+    -d grant_type=password -d username=gabrielczar -d password=123456
 ```
 
 ```json
@@ -46,6 +47,11 @@ curl spring-rest-oauth2-jwt:B6813193F1D7EC8BF5B40@localhost:8080/oauth/token -d 
   "scope":"read write",
   "jti":"f812dc0e-fbfb-4453-8d26-696c65d4309f"
 }
+```
+
+- Renovar Token:
+```http request
+curl -X POST -H 'Authorization: Basic dGVzdGNsaWVudDpzZWNyZXQ=' -d 'refresh_token=fdb8fdbecf1d03ce5e6125c067733c0d51de209c&grant_type=refresh_token' localhost:8080/oauth/token
 ```
 
 - Acessar recurso:

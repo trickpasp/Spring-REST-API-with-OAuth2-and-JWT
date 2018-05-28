@@ -23,6 +23,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
+        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
+
         <base>frolvlad/alpine-oraclejdk8:slim</base>
         <tomcat.port>8080</tomcat.port>
         <tomcat.ip>127.0.0.1</tomcat.ip>
@@ -46,10 +48,10 @@
             <artifactId>spring-security-jwt</artifactId>
             <version>1.0.9.RELEASE</version>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-            <version>2.3.3.RELEASE</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
         <!-- DATA -->
@@ -88,6 +90,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

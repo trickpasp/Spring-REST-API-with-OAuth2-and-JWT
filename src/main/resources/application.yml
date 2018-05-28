@@ -2,27 +2,24 @@ spring:
   application:
     name: spring-rest-oauth2-jwt
 
-cors:
-  allowedOrigin: "*"
-  allowedMethods: GET,POST,DELETE,PUT,OPTIONS
-  allowedHeaders: Origin,X-Requested-With,Content-Type,Accept,Accept-Encoding,Accept-Language,Host,Referer,Connection,AccountCredentialsModel-Agent,Authorization
-
 security:
   oauth2:
+    resource.id: DA2D532D1BEjwtresourceid
+    client:
+      client-id: spring-rest-oauth2-jwt
+      client-secret: B6813193F1D7EC8BF5B40
+      access-token-validity-seconds: 604800
+      refresh-token-validity-seconds: 864000
+    authorization:
+      realm: Spring_Boot_REST_API_OAuth2_JWT_Realm
     resource:
-      filter-order: 3
+      jwt:
+        signing-key: mw5BG4UXKAZKznRbRd3tHXf7hfjKfPY1
+  filter-order: 3
 
-  signing-key: mw5BG4UXKAZKznRbRd3tHXf7hfjKfPY1
-  security-realm: Spring Boot REST API OAuth2 JWT Realm
-
-  jwt:
-    client-id: spring-rest-oauth2-jwt
-    client-secret: B6813193F1D7EC8BF5B40
-    grant-type: password
-    grant-type-auth-code: authorization_code
-    grant-type-refresh-token: refresh_token
-    scope-read: read
-    scope-write: write
-    resource-ids: DA2D532D1BEjwtresourceid
-    access-token-validity: 604800 # 7 days
-    refresh-token-validity: 2592000 # 30 days
+endpoints:
+  cors:
+    max-age: 3600
+    allowed-headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Accept-Language, Host, Referer, Connection, AccountCredentialsModel-Agent, Authorization
+    allowed-methods: GET, POST, DELETE, PUT, OPTIONS
+    allowed-origins: "*"
