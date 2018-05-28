@@ -1,6 +1,6 @@
-package com.gabrielczar.springrestoauth2jwt.handlers;
+package com.gabrielczar.spring2oauth2jwt.handlers;
 
-import com.gabrielczar.springrestoauth2jwt.domain.User;
+import com.gabrielczar.spring2oauth2jwt.entities.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 

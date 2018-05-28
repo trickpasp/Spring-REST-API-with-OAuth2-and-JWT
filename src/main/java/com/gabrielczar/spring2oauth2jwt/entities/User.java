@@ -1,8 +1,8 @@
-package com.gabrielczar.springrestoauth2jwt.domain;
+package com.gabrielczar.spring2oauth2jwt.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gabrielczar.springrestoauth2jwt.handlers.UserListenerHandler;
+import com.gabrielczar.spring2oauth2jwt.handlers.UserListenerHandler;
 import lombok.Data;
 import lombok.ToString;
 

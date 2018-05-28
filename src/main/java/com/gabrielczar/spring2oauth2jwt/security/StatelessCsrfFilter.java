@@ -1,4 +1,4 @@
-package com.gabrielczar.springrestoauth2jwt.configurations;
+package com.gabrielczar.spring2oauth2jwt.security;
 
 
 import org.springframework.security.access.AccessDeniedException;
@@ -15,7 +15,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
-import static com.gabrielczar.springrestoauth2jwt.utils.Constants.*;
+import static com.gabrielczar.spring2oauth2jwt.utils.Constants.CSRF_COOKIE;
+import static com.gabrielczar.spring2oauth2jwt.utils.Constants.CSRF_HEADER;
+import static com.gabrielczar.spring2oauth2jwt.utils.Constants.SAFE_METHODS;
 
 public class StatelessCsrfFilter extends OncePerRequestFilter {
     private final AccessDeniedHandler accessDeniedHandler = new AccessDeniedHandlerImpl();

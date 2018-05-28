@@ -1,6 +1,7 @@
-package com.gabrielczar.springrestoauth2jwt.repositories;
+package com.gabrielczar.spring2oauth2jwt.repositories;
 
-import com.gabrielczar.springrestoauth2jwt.domain.User;
+
+import com.gabrielczar.spring2oauth2jwt.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

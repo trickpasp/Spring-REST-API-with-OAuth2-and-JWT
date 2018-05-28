@@ -1,4 +1,4 @@
-package com.gabrielczar.springrestoauth2jwt.domain;
+package com.gabrielczar.spring2oauth2jwt.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

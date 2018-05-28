@@ -1,4 +1,4 @@
-package com.gabrielczar.springrestoauth2jwt;
+package com.gabrielczar.spring2oauth2jwt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringRestOauth2JwtApplicationTests {
+public class Spring2Oauth2JwtApplicationTests {
 
     @Test
     public void contextLoads() {

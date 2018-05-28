@@ -1,4 +1,4 @@
-package com.gabrielczar.springrestoauth2jwt.configurations;
+package com.gabrielczar.spring2oauth2jwt.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

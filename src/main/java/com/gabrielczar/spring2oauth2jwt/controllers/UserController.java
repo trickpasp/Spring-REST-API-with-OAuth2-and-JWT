@@ -1,7 +1,8 @@
-package com.gabrielczar.springrestoauth2jwt.controllers;
+package com.gabrielczar.spring2oauth2jwt.controllers;
 
-import com.gabrielczar.springrestoauth2jwt.domain.User;
-import com.gabrielczar.springrestoauth2jwt.repositories.UserRepository;
+
+import com.gabrielczar.spring2oauth2jwt.entities.User;
+import com.gabrielczar.spring2oauth2jwt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

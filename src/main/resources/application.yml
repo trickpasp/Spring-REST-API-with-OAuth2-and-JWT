@@ -7,7 +7,7 @@ security:
     resource.id: DA2D532D1BEjwtresourceid
     client:
       client-id: spring-rest-oauth2-jwt
-      client-secret: B6813193F1D7EC8BF5B40
+      client-secret: "{noop}B6813193F1D7EC8BF5B40"
       access-token-validity-seconds: 604800
       refresh-token-validity-seconds: 864000
     authorization:
@@ -15,11 +15,12 @@ security:
     resource:
       jwt:
         signing-key: mw5BG4UXKAZKznRbRd3tHXf7hfjKfPY1
-  filter-order: 3
 
-endpoints:
-  cors:
-    max-age: 3600
-    allowed-headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Accept-Language, Host, Referer, Connection, AccountCredentialsModel-Agent, Authorization
-    allowed-methods: GET, POST, DELETE, PUT, OPTIONS
-    allowed-origins: "*"
+management:
+  endpoints:
+    web:
+      cors:
+        max-age: 3600s
+        allowed-origins: "*"
+        allowed-headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Accept-Language, Host, Referer, Connection, AccountCredentialsModel-Agent, Authorization
+        allowed-methods: GET, POST, DELETE, PUT, OPTIONS

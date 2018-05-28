@@ -1,4 +1,5 @@
-package com.gabrielczar.springrestoauth2jwt.utils;
+package com.gabrielczar.spring2oauth2jwt.utils;
+
 
 import java.util.Arrays;
 import java.util.HashSet;

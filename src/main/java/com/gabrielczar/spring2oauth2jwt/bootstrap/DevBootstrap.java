@@ -1,10 +1,9 @@
-package com.gabrielczar.springrestoauth2jwt.bootstrap;
+package com.gabrielczar.spring2oauth2jwt.bootstrap;
 
 
-import com.gabrielczar.springrestoauth2jwt.domain.Authority;
-import com.gabrielczar.springrestoauth2jwt.domain.User;
-import com.gabrielczar.springrestoauth2jwt.repositories.UserRepository;
-import org.apache.log4j.Logger;
+import com.gabrielczar.spring2oauth2jwt.entities.Authority;
+import com.gabrielczar.spring2oauth2jwt.entities.User;
+import com.gabrielczar.spring2oauth2jwt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.logging.Logger;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
@@ -44,6 +44,6 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         user.setPassword("123456");
         user.setAuthorities(Collections.singletonList(new Authority("ROLE_USER")));
 
-        userRepository.save(Arrays.asList(adm, user));
+        userRepository.saveAll(Arrays.asList(adm, user));
     }
 }

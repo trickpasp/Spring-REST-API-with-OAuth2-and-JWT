@@ -1,4 +1,5 @@
-package com.gabrielczar.springrestoauth2jwt.utils;
+package com.gabrielczar.spring2oauth2jwt.utils;
+
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
