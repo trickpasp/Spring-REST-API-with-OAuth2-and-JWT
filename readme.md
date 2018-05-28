@@ -4,13 +4,13 @@
 
 - Maven
 
-```
+```console
 mnv clean spring-boot:run
 ```
 
 - Docker 
 
-```
+```console
 mvn clean package docker:build
 mvn docker:start
 ```
@@ -32,7 +32,7 @@ mvn docker:start
 
 - Gerar token de acesso: 
 
-```
+```console
 curl [CLIENT-ID]:[CLIENT-SECRET]@localhost:8080/oauth/token -d grant_type=password -d username=[USER] -d password=[PASSWORD]
 ```
 
@@ -48,12 +48,14 @@ curl [CLIENT-ID]:[CLIENT-SECRET]@localhost:8080/oauth/token -d grant_type=passwo
 ```
 
 - Renovar Token:
-```
+
+```console
 curl [CLIENT-ID]:[CLIENT-SECRET]@localhost:8080/oauth/token -d grant_type=refresh_token -d refresh_token=[REFRESH_TOKEN] 
 ```
 
 - Acessar recurso:
-```
+
+```console
 curl http://localhost:8080/api/users -H "Authorization: Bearer [ACCESS_TOKEN]"
 ```
 
