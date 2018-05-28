@@ -72,9 +72,6 @@ public class OAuth2ServerConfiguration {
     @Configuration
     @EnableAuthorizationServer
     class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
-        private TokenStore  tokenStore = new InMemoryTokenStore();
-
-        @Qualifier("authenticationManagerBean")
         private final AuthenticationManager authenticationManager;
 
         @Autowired
@@ -98,7 +95,7 @@ public class OAuth2ServerConfiguration {
             endpoints
                     .authenticationManager(authenticationManager)
                     .tokenServices(tokenServices())
-                    .tokenStore(tokenStore)
+                    .tokenStore(tokenStore())
                     .accessTokenConverter(accessTokenConverter());
         }
 
@@ -118,7 +115,7 @@ public class OAuth2ServerConfiguration {
         @Primary
         public DefaultTokenServices tokenServices() {
             DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
-            defaultTokenServices.setTokenStore(tokenStore);
+            defaultTokenServices.setTokenStore(tokenStore());
             defaultTokenServices.setSupportRefreshToken(true);
             defaultTokenServices.setTokenEnhancer(accessTokenConverter());
             defaultTokenServices.setAccessTokenValiditySeconds(accessTokenValidity);
