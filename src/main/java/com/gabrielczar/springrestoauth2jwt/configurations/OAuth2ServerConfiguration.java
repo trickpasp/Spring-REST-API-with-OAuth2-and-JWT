@@ -62,8 +62,8 @@ public class OAuth2ServerConfiguration {
                     .invalidateHttpSession(true)
                     .clearAuthentication(true)
                     .and().authorizeRequests()
-                    .antMatchers("/api/**").hasAnyRole("ADMIN", "USER")
                     .antMatchers("/api/public/**").permitAll()
+                    .antMatchers("/api/**").hasAnyRole("ADMIN", "USER")
                     .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                     .anyRequest().denyAll();
         }
