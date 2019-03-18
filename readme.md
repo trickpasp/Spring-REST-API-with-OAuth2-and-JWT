@@ -5,7 +5,7 @@
 - Maven
 
 ```console
-mnv clean spring-boot:run
+mvn clean spring-boot:run
 ```
 
 - Docker 
